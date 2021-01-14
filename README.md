@@ -5,7 +5,7 @@ Checks your google calendar agenda
 This skill checks your google calendar agenda everyday at 9am and tells you the weather of the meeting's location.
 
 ## Examples
-* "What's my agenda"
+* "What's my agenda?"
 * "Do i have a meeting today?"
 * "What's my schedule for today?"
 * "What's my agenda for today?"
