@@ -1,5 +1,5 @@
-# <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/calendar-day.svg" card_color="#222222" width="50" height="50" style="vertical-align:bottom"/> Google Calender Reader
-Checks google calender agenda
+# <img src="https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/calendar-day.svg" card_color="#222222" width="50" height="50" style="vertical-align:bottom"/> Google Calendar Reader
+Checks your google calendar agenda
 
 ## About
 This skill checks your google calendar agenda everyday at 9am and tells you the weather of the meeting's location.
