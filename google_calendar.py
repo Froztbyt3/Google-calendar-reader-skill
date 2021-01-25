@@ -2,6 +2,8 @@ from __future__ import print_function
 import datetime
 import pickle
 import os.path
+from datetime import datetime
+import calendar
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -36,7 +38,7 @@ def googleCalendar():
     service = build('calendar', 'v3', credentials=creds)
 
     # Call the Calendar API
-    now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
+    now = datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
     print('Getting the upcoming event')
     events_result = service.events().list(calendarId='primary', timeMin=now,
                                           maxResults=1, singleEvents=True,
@@ -69,14 +71,25 @@ def getEventData():
 
     eventData = ''
     for event in events:
-        start = event['start'].get('dateTime', event['start'].get('date'))
+        start = event['start'].get('dateTime')
 
         try:
             eventData = start, event['summary']
         except:
             print('There is no upcoming event.')
 
-    return eventData
+    (eventDayTime, eventName) = eventData
+    timeObject = datetime.strptime(eventDayTime, '%Y-%m-%dT%H:%M:%S%z')
+    eventTime = (timeObject.time()).strftime("%H:%M:%S")
+    eventDay = calendar.day_name[(timeObject.date().isoweekday())-1]
+
+    CalendarDataDict = {
+        'meetingResult': eventName,
+        'dayResult': eventDay,
+        'timeResult': eventTime
+    }
+
+    return CalendarDataDict
 
 
 # if __name__ == '__main__':

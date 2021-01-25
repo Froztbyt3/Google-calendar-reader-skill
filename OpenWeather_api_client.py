@@ -1,4 +1,3 @@
-import google_calendar
 import requests
 import json
 from google_calendar import getLocationData
