@@ -11,9 +11,9 @@ eventDataDict = getEventData()
 
 class GoogleCalendarReaderSkill(MycroftSkill):
     def __init__(self):
-        # MycroftSkill.__init__(self)
-        super(GoogleCalendarReaderSkill, self).__init__(
-            name='GoogleCalendarReaderSkill')
+        MycroftSkill.__init__(self)
+        # super(GoogleCalendarReaderSkill, self).__init__(
+        #     name='GoogleCalendarReaderSkill')
 
     @intent_file_handler('reader.calendar.google.intent')
     def handle_reader_calendar_google(self, message):
