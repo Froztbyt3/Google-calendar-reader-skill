@@ -15,10 +15,10 @@ class GoogleCalendarReaderSkill(MycroftSkill):
         # super(GoogleCalendarReaderSkill, self).__init__(
         #     name='GoogleCalendarReaderSkill')
 
-    @intent_file_handler('reader.calendar.google.intent')
+    @intent_file_handler("hello.intent")
     def handle_reader_calendar_google(self, message):
 
-        self.speak_dialog('meeting', data=eventDataDict)
+        self.speak_dialog("hello", data=eventDataDict)
         # client.emit(
         #     Message('speak', data=eventDataDict))
 
